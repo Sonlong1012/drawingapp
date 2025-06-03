@@ -46,12 +46,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
         child: FadeTransition(
           opacity: _fadeAnimation, 
           child: Text(
-            'Life is Art\nPaint your dreams',
+            'Life is Art\nPaint your dreams 🖌️',
             textAlign: TextAlign.center,
             style: const TextStyle(
               fontSize: 24, 
               fontWeight: FontWeight.bold,
-              color: Colors.blue
+              color: Colors.purple
             ),
           ),
           ),

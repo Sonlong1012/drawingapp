@@ -10,35 +10,28 @@ class Stroke extends HiveObject {
   @HiveField(0)
   final List<OffsetCustom> points;
 
-
   @HiveField(1)
   final int color;
-
 
   @HiveField(2)
   final double brushSize;
 
-  Stroke({
-    required this. points, 
-    required this. color,
-    required this.brushSize
-    });
+  Stroke({required this.points, required this.color, required this.brushSize});
 
-    Color get strokeColor => Color(color);
+  Color get strokeColor => Color(color);
 
-    List<Offset> get offsetPoints => points.map((e) => e.toOffset()).toList();
-    
-    factory Stroke.fromOffsets({
-      required List<Offset> points,
-      required Color color,
-      required double brushSize,
-    }) {
-      return Stroke(
-        points: points.map((e) => OffsetCustom.fromOffset(e)).toList(), 
-        // ignore: deprecated_member_use
-        color: color.value, 
-        brushSize: brushSize
-        );
-    }
+  List<Offset> get offsetPoints => points.map((e) => e.toOffset()).toList();
 
+  factory Stroke.fromOffsets({
+    required List<Offset> points,
+    required Color color,
+    required double brushSize,
+  }) {
+    return Stroke(
+      points: points.map((e) => OffsetCustom.fromOffset(e)).toList(),
+      // ignore: deprecated_member_use
+      color: color.value,
+      brushSize: brushSize,
+    );
+  }
 }

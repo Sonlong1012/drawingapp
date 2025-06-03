@@ -8,7 +8,7 @@ part of 'offset.dart';
 
 class OffsetCustomAdapter extends TypeAdapter<OffsetCustom> {
   @override
-  final int typeId = 1;
+  final int typeId = 0;
 
   @override
   OffsetCustom read(BinaryReader reader) {

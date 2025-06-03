@@ -15,7 +15,7 @@ void main() async {
   Hive.registerAdapter(StrokeAdapter());
 
   // Register adapters
-  await Hive.openBox<List<Stroke>>('drawings');
+  await Hive.openBox<Map<dynamic,dynamic>>('drawings');
   runApp(const MyApp());
 }
 
@@ -28,9 +28,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Paint Your Dreams',
       theme: ThemeData(
-        primarySwatch: Colors.blue, 
+        primarySwatch: Colors.purple, 
         useMaterial3: false,
       ),
+      debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
         '/': (context) =>  SplashScreen(),
